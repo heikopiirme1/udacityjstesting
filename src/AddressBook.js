@@ -1,5 +1,6 @@
 function AddressBook() {
     this.contacts = [];
+    this.initialComplete = false;
 }
 
 AddressBook.prototype.getInitialContacts = function(cb) {

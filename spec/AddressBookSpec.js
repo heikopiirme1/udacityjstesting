@@ -18,3 +18,20 @@ describe('Address Book', function() {
         expect(addressBook.getContact(0)).not.toBeDefined(); // peaks addressBook.getContact(0) olema "undefined"
     });
 });
+
+describe('Async Address Book', function() {
+    var addressBook = new AddressBook();
+
+    beforeEach(function (done) {
+        addressBook.getInitialContacts(function () { // Kui algsed kontaktid on kätte saadud, ...
+            done();
+        });
+    });
+
+
+    it('should grab initial contacts', function(done) {
+        expect(addressBook.initialComplete).toBe(true); // ... siis minnakse testiga edasi ja kontrollitakse väärtuseid.
+        done();
+    });
+});
+
